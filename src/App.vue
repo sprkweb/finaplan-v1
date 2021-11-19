@@ -1,6 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar app dense>
+    <v-app-bar
+      app
+      dense
+      color="#030A04"
+      dark
+    >
       <v-app-bar-title>
         FinaPlan
       </v-app-bar-title>

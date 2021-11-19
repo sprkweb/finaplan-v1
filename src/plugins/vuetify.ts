@@ -13,6 +13,15 @@ export default new Vuetify({
   lang: {
     t: (key, ...params) => i18n.t(key, params) as string
   },
+  theme: {
+    themes: {
+      light: {
+        primary: '#3B707D',
+        secondary: '#FFB85D',
+        accent: '#FF5412'
+      }
+    }
+  },
   icons: {
     iconfont: 'mdiSvg'
   }

@@ -9,6 +9,7 @@
         <v-btn
           v-model="speedDialShown"
           fab
+          color="accent"
         >
           <v-icon v-if="speedDialShown">
             {{ icons.mdiClose }}
