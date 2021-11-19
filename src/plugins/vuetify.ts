@@ -12,5 +12,8 @@ Vue.use(VueI18n)
 export default new Vuetify({
   lang: {
     t: (key, ...params) => i18n.t(key, params) as string
+  },
+  icons: {
+    iconfont: 'mdiSvg'
   }
 })

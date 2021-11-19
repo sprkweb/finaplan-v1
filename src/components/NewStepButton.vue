@@ -11,10 +11,10 @@
           fab
         >
           <v-icon v-if="speedDialShown">
-            mdi-close
+            {{ icons.mdiClose }}
           </v-icon>
           <v-icon v-else>
-            mdi-account-circle
+            {{ icons.mdiPlus }}
           </v-icon>
         </v-btn>
       </template>
@@ -23,8 +23,10 @@
 </template>
 
 <script lang="ts">
+import { mdiClose, mdiPlus } from '@mdi/js'
 const state = {
-  speedDialShown: false
+  speedDialShown: false,
+  icons: { mdiClose, mdiPlus }
 }
 export default {
   data: (): typeof state => state
