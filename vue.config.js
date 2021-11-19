@@ -15,5 +15,11 @@ module.exports = {
       enableInSFC: true,
       enableBridge: false
     }
+  },
+
+  productionSourceMap: false,
+
+  css: {
+    sourceMap: true
   }
 }
