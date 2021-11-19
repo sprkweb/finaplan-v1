@@ -1,27 +1,29 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <v-app-bar app dense>
+      <v-app-bar-title>
+        FinaPlan
+      </v-app-bar-title>
     </v-app-bar>
 
     <v-main>
-      <HelloI18n/>
+      <PlanSteps/>
+      <NewStepButton />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import HelloI18n from './components/HelloI18n.vue'
+import PlanSteps from './components/PlanSteps.vue'
+import NewStepButton from './components/NewStepButton.vue'
 
 export default Vue.extend({
   name: 'App',
 
   components: {
-    HelloI18n
+    PlanSteps,
+    NewStepButton
   },
 
   data: () => ({
