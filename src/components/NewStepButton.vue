@@ -24,12 +24,13 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import { mdiClose, mdiPlus } from '@mdi/js'
-const state = {
-  speedDialShown: false,
-  icons: { mdiClose, mdiPlus }
-}
-export default {
-  data: (): typeof state => state
-}
+
+export default Vue.extend({
+  data: () => ({
+    speedDialShown: false,
+    icons: { mdiClose, mdiPlus }
+  })
+})
 </script>

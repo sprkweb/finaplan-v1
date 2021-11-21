@@ -9,10 +9,41 @@
       <v-app-bar-title>
         FinaPlan
       </v-app-bar-title>
+
+      <template v-slot:extension>
+        <v-tabs
+          v-model="currentFlow"
+          show-arrows
+        >
+          <v-tab
+            v-for="flow, key in flows"
+            :key="key"
+          >
+            {{ flow.name }}
+          </v-tab>
+        </v-tabs>
+        <v-btn
+          icon
+          v-on:click.capture.stop="addFlowAndSelect"
+        >
+          <v-icon>
+            {{ icons.mdiPlus }}
+          </v-icon>
+        </v-btn>
+      </template>
     </v-app-bar>
 
     <v-main>
-      <PlanSteps/>
+      <v-tabs-items v-model="currentFlow">
+        <v-tab-item
+          v-for="flow, key in flows"
+          :key="key"
+        >
+          <v-container fluid>
+            <CashFlow :flowID="key" />
+          </v-container>
+        </v-tab-item>
+      </v-tabs-items>
       <NewStepButton />
     </v-main>
   </v-app>
@@ -20,19 +51,35 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import PlanSteps from './components/PlanSteps.vue'
+import { mapState, Store } from 'vuex'
+import type { State } from './store'
+import { mdiPlus } from '@mdi/js'
+import CashFlow from './components/CashFlow.vue'
 import NewStepButton from './components/NewStepButton.vue'
 
 export default Vue.extend({
   name: 'App',
 
   components: {
-    PlanSteps,
+    CashFlow,
     NewStepButton
   },
 
   data: () => ({
-    //
-  })
+    icons: { mdiPlus },
+    currentFlow: null as null | number
+  }),
+
+  computed: mapState({
+    flows: 'flows'
+  }),
+
+  methods: {
+    addFlowAndSelect () {
+      const store: Store<State> = this.$store
+      store.commit('addFlow')
+      this.currentFlow = this.flows.length - 1
+    }
+  }
 })
 </script>
