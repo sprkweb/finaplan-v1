@@ -6,7 +6,7 @@
       color="#030A04"
       dark
     >
-      <v-app-bar-title>
+      <v-app-bar-title ref="appName">
         FinaPlan
       </v-app-bar-title>
 
@@ -52,7 +52,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapState, Store } from 'vuex'
-import type { State } from './store'
+import type { StateType } from './store/defaultState'
 import { mdiPlus } from '@mdi/js'
 import CashFlow from './components/CashFlow.vue'
 import NewStepButton from './components/NewStepButton.vue'
@@ -76,7 +76,7 @@ export default Vue.extend({
 
   methods: {
     addFlowAndSelect () {
-      const store: Store<State> = this.$store
+      const store: Store<StateType> = this.$store
       store.commit('addFlow')
       this.currentFlow = this.flows.length - 1
     }

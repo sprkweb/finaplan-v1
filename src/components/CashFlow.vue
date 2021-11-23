@@ -20,7 +20,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapState } from 'vuex'
-import type { State } from '../store'
+import type { StateType } from '../store/defaultState'
 import NotesStep from './step-modules/NotesStep.vue'
 
 export default Vue.extend({
@@ -32,7 +32,7 @@ export default Vue.extend({
     openedSteps: []
   }),
   computed: mapState({
-    steps: function (state: State) {
+    steps: function (state: StateType) {
       return state.flows[this.flowID].steps
     }
   })
