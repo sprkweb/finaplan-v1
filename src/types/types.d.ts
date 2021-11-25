@@ -1,5 +1,6 @@
 interface PlanStep<StepType extends string, OptionsT> {
-  stepType: StepType;
+  id: number
+  stepType: StepType
   options: OptionsT
 }
 

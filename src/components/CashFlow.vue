@@ -1,30 +1,42 @@
 <template>
   <div>
-    <v-expansion-panels
-      v-model="openedSteps"
-      multiple
+    <!-- TODO: save the order -->
+    <draggable
+      tag="v-expansion-panels"
+      v-bind:component-data="{
+        attrs: {
+          'v-model': 'openedSteps',
+          multiple: true
+        }
+      }"
     >
       <v-expansion-panel
-        v-for="(step, i) in steps"
-        :key="i"
+        v-for="(step) in steps"
+        :key="step.id"
       >
-        <v-expansion-panel-header>{{ $t(`stepType.${step.stepType}`) }}</v-expansion-panel-header>
+        <v-expansion-panel-header>
+          {{ $t(`stepType.${step.stepType}`) }}
+        </v-expansion-panel-header>
         <v-expansion-panel-content>
           <NotesStep v-if="step.stepType == 'notes'" v-bind="step.options" />
         </v-expansion-panel-content>
       </v-expansion-panel>
-    </v-expansion-panels>
+    </draggable>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { mapState } from 'vuex'
+import draggable from 'vuedraggable'
 import type { StateType } from '../store/defaultState'
 import NotesStep from './step-modules/NotesStep.vue'
 
 export default Vue.extend({
-  components: { NotesStep },
+  components: {
+    NotesStep,
+    draggable
+  },
   props: {
     flowID: Number
   },
