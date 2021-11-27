@@ -5,6 +5,9 @@ import { defaultState, StateType } from './defaultState'
 Vue.use(Vuex)
 
 const mutations: MutationTree<StateType> = {
+  updateSteps (state, { flowID, value }) {
+    state.flows[flowID].steps = value
+  },
   addFlow (state) {
     const number = state.flows.length + 1
     const newFlow: CashFlowInfo = {

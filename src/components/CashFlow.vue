@@ -1,8 +1,9 @@
 <template>
   <div>
-    <!-- TODO: save the order -->
+    <!-- TODO: transition? -->
     <draggable
       tag="v-expansion-panels"
+      v-model='steps'
       v-bind:component-data="{
         attrs: {
           'v-model': 'openedSteps',
@@ -27,9 +28,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapState } from 'vuex'
 import draggable from 'vuedraggable'
-import type { StateType } from '../store/defaultState'
 import NotesStep from './step-modules/NotesStep.vue'
 
 export default Vue.extend({
@@ -43,11 +42,18 @@ export default Vue.extend({
   data: () => ({
     openedSteps: []
   }),
-  computed: mapState({
-    steps: function (state: StateType) {
-      return state.flows[this.flowID].steps
+  computed: {
+    steps: {
+      get () {
+        // @ts-ignore: this.$store and this.flowID actually exist
+        return this.$store.state.flows[this.flowID].steps
+      },
+      set (value) {
+        // @ts-ignore: this.$store and this.flowID actually exist
+        this.$store.commit('updateSteps', { flowID: this.flowID, value })
+      }
     }
-  })
+  }
 })
 </script>
 
