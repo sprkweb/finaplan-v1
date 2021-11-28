@@ -4,12 +4,7 @@
     <draggable
       tag="v-expansion-panels"
       v-model='steps'
-      v-bind:component-data="{
-        attrs: {
-          'v-model': 'openedSteps',
-          multiple: true
-        }
-      }"
+      v-bind:component-data="expansionPanelsData"
     >
       <v-expansion-panel
         v-for="(step) in steps"
@@ -40,17 +35,25 @@ export default Vue.extend({
     flowID: Number
   },
   data: () => ({
-    openedSteps: []
   }),
   computed: {
     steps: {
       get () {
-        // @ts-ignore: this.$store and this.flowID actually exist
-        return this.$store.state.flows[this.flowID].steps
+        return this.$store.getters.getSteps(this.flowID)
       },
       set (value) {
         // @ts-ignore: this.$store and this.flowID actually exist
         this.$store.commit('updateSteps', { flowID: this.flowID, value })
+      }
+    },
+    expansionPanelsData: function () {
+      // @ts-ignore: this.$store actually exist
+      const stepsCount = this.$store.getters.getSteps(this.flowID).length
+      return {
+        props: {
+          value: Array.from({ length: stepsCount }, (v, k) => k),
+          multiple: true
+        }
       }
     }
   }

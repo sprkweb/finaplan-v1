@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Vuex, { MutationTree } from 'vuex'
+import Vuex, { GetterTree, MutationTree } from 'vuex'
 import { defaultState, StateType } from './defaultState'
 
 Vue.use(Vuex)
@@ -18,9 +18,15 @@ const mutations: MutationTree<StateType> = {
   }
 }
 
+const getters: GetterTree<StateType, StateType> = {
+  getSteps: (state) => (flowID: number) => {
+    return state.flows[flowID].steps
+  }
+}
+
 export default new Vuex.Store({
   state: defaultState,
-  getters: {},
+  getters,
   mutations,
   actions: {},
   modules: {}
