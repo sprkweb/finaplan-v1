@@ -5,8 +5,6 @@ import {
   differenceInCalendarDays
 } from 'date-fns'
 
-type SimpleDuration = { years: number } | { months: number } | { weeks: number } | { days: number };
-
 /**
  * How many times is the interval contained between
  * the given dates (without remainder).
