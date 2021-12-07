@@ -1,4 +1,4 @@
-interface PlanStep<StepType extends string, OptionsT> {
+interface PlanStepInfo<StepType extends string, OptionsT> {
   id: number
   stepType: StepType
   options: OptionsT
@@ -6,5 +6,5 @@ interface PlanStep<StepType extends string, OptionsT> {
 
 declare interface CashFlowInfo {
   name: string,
-  steps: Array<PlanStep<string, unknown>>
+  steps: Array<PlanStepInfo<string, unknown>>
 }
