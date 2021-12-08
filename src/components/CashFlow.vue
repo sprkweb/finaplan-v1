@@ -11,8 +11,19 @@
         :key="step.id"
       >
         <v-expansion-panel-header>
-          {{ $t(`stepType.${step.stepType}`) }}
+          <v-row>
+            <v-col cols="auto">
+              {{ $t(`stepType.${step.stepType}`) }}
+            </v-col>
+            <v-spacer></v-spacer>
+            <v-col cols="auto">
+              <v-icon class="handle">
+                {{ icons.mdiDrag }}
+              </v-icon>
+            </v-col>
+          </v-row>
         </v-expansion-panel-header>
+
         <v-expansion-panel-content>
           <NotesStep v-if="step.stepType == 'notes'" v-bind="step.options" />
         </v-expansion-panel-content>
@@ -24,6 +35,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import draggable from 'vuedraggable'
+import { mdiDrag } from '@mdi/js'
 import NotesStep from './step-modules/NotesStep.vue'
 
 export default Vue.extend({
@@ -35,6 +47,7 @@ export default Vue.extend({
     flowID: Number
   },
   data: () => ({
+    icons: { mdiDrag }
   }),
   computed: {
     steps: {
