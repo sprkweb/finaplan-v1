@@ -17,7 +17,7 @@
             </v-col>
             <v-spacer></v-spacer>
             <v-col cols="auto">
-              <v-icon class="handle">
+              <v-icon>
                 {{ icons.mdiDrag }}
               </v-icon>
             </v-col>
