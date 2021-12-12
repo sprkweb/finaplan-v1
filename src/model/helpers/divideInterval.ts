@@ -1,8 +1,8 @@
 import {
-  differenceInCalendarYears,
-  differenceInCalendarMonths,
-  differenceInCalendarWeeks,
-  differenceInCalendarDays
+  differenceInYears,
+  differenceInMonths,
+  differenceInWeeks,
+  differenceInDays
 } from 'date-fns'
 
 /**
@@ -23,13 +23,13 @@ export default function divideInterval (startDate: Date, endDate: Date, interval
 
   let diff: number
   if (intervalType === 'years') {
-    diff = differenceInCalendarYears(endDate, startDate)
+    diff = differenceInYears(endDate, startDate)
   } else if (intervalType === 'months') {
-    diff = differenceInCalendarMonths(endDate, startDate)
+    diff = differenceInMonths(endDate, startDate)
   } else if (intervalType === 'weeks') {
-    diff = differenceInCalendarWeeks(endDate, startDate)
+    diff = differenceInWeeks(endDate, startDate)
   } else if (intervalType === 'days') {
-    diff = differenceInCalendarDays(endDate, startDate)
+    diff = differenceInDays(endDate, startDate)
   } else {
     throw new Error('Interval type is incorrect')
   }
