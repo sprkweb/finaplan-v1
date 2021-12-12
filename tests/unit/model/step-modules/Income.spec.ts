@@ -1,5 +1,4 @@
-import { Initialize } from '@/model/step-modules'
-import Income from '@/model/step-modules/Income'
+import { Initialize, Income } from '@/model/step-modules'
 
 describe('Income', () => {
   const context: CashFlowContext = { startDate: new Date(2000, 1, 1) }
