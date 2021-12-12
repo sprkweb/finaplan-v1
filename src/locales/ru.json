@@ -1,5 +1,18 @@
 {
-    "stepType": {
-        "notes": "Заметки"
+  "button": {
+    "cancel": "Отмена",
+    "add": "Добавить"
+  },
+  "stepModules": {
+    "contribution": {
+      "name": "Разовый взнос"
+    },
+    "income": {
+      "name": "Постоянный доход"
     }
+  },
+
+  "chooseStepDialog": {
+    "title": "Выберите новый шаг вашего плана"
+  }
 }

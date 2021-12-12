@@ -1,5 +1,18 @@
 {
-    "stepType": {
-        "notes": "Notes"
+  "button": {
+    "cancel": "Cancel",
+    "add": "Add"
+  },
+  "stepModules": {
+    "contribution": {
+      "name": "One-time contribution"
+    },
+    "income": {
+      "name": "Fixed income"
     }
+  },
+
+  "chooseStepDialog": {
+    "title": "Choose a new step of your plan"
+  }
 }
