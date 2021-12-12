@@ -72,18 +72,3 @@ export default Vue.extend({
   }
 })
 </script>
-
-<i18n>
-{
-  "en": {
-    "stepType": {
-      "notes": "Notes"
-    }
-  },
-  "ru": {
-    "stepType": {
-      "notes": "Заметки"
-    }
-  }
-}
-</i18n>
