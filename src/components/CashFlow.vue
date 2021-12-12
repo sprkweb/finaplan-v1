@@ -29,6 +29,8 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
     </draggable>
+
+    <NewStepButton />
   </div>
 </template>
 
@@ -36,10 +38,12 @@
 import Vue from 'vue'
 import draggable from 'vuedraggable'
 import { mdiDrag } from '@mdi/js'
-import NotesStep from './step-modules/NotesStep.vue'
+import NewStepButton from '@/components/NewStepButton.vue'
+import NotesStep from '@/components/step-modules/NotesStep.vue'
 
 export default Vue.extend({
   components: {
+    NewStepButton,
     NotesStep,
     draggable
   },

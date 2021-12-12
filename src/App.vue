@@ -44,7 +44,6 @@
           </v-container>
         </v-tab-item>
       </v-tabs-items>
-      <NewStepButton />
     </v-main>
   </v-app>
 </template>
@@ -52,17 +51,15 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapState, Store } from 'vuex'
-import type { StateType } from './store/defaultState'
+import type { StateType } from '@/store/defaultState'
 import { mdiPlus } from '@mdi/js'
-import CashFlow from './components/CashFlow.vue'
-import NewStepButton from './components/NewStepButton.vue'
+import CashFlow from '@/components/CashFlow.vue'
 
 export default Vue.extend({
   name: 'App',
 
   components: {
-    CashFlow,
-    NewStepButton
+    CashFlow
   },
 
   data: () => ({
