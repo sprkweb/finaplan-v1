@@ -5,10 +5,12 @@ import {
 
 import divideInterval from '@/model/helpers/divideInterval'
 
+type IncomeOptions = { amount: Cash, incomeStartDate: RelativeDate, period: SimpleDuration }
+
 /**
  * Fixed income; contribution of a certain amount which happens regularly, for example, salary
  */
-const Income: PlanStep<{ amount: Cash, incomeStartDate: RelativeDate, period: SimpleDuration }> =
+const Income: PlanStep<IncomeOptions> =
   function (prevCashFlow, { amount, incomeStartDate, period }, context) {
     return {
       calc (calcDate) {
@@ -24,3 +26,8 @@ const Income: PlanStep<{ amount: Cash, incomeStartDate: RelativeDate, period: Si
   }
 
 export default Income
+export const defaultOptions: IncomeOptions = {
+  amount: 1000,
+  period: { months: 1 },
+  incomeStartDate: { days: 0 }
+}
