@@ -58,8 +58,12 @@ export default Vue.extend({
       get () {
         return this.$store.getters.getSteps(this.flowID)
       },
-      set (value) {
-        this.$store.commit('updateSteps', { flowID: this.flowID, value })
+      // Use this only to change their order
+      set (value: PlanStepInfo[]) {
+        this.$store.commit('updateStepsOrder', {
+          flowID: this.flowID,
+          order: value.map((v: PlanStepInfo) => v.id)
+        })
       }
     },
     expansionPanelsData: function () {

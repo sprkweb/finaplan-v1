@@ -5,16 +5,18 @@ import { defaultState, StateType } from './defaultState'
 Vue.use(Vuex)
 
 const mutations: MutationTree<StateType> = {
-  updateSteps (state, { flowID, value }) {
-    state.flows[flowID].steps = value
+  updateStepsOrder (state, { flowID, order }) {
+    state.flows[flowID].steps = order
   },
   addStep (state, { flowID, stepTypeInfo }: { flowID: number, stepTypeInfo: PlanStepTypeInfo }) {
-    state.flows[flowID].steps.push({
-      id: state.lastStepID + 1,
+    state.lastStepID += 1
+    const newStep: PlanStepInfo = {
+      id: state.lastStepID,
       stepType: stepTypeInfo.name,
       options: stepTypeInfo.defaultOptions
-    })
-    state.lastStepID += 1
+    }
+    state.steps[newStep.id] = newStep
+    state.flows[flowID].steps.push(newStep.id)
   },
   addFlow (state) {
     const number = state.flows.length + 1
@@ -28,7 +30,10 @@ const mutations: MutationTree<StateType> = {
 
 const getters: GetterTree<StateType, StateType> = {
   getSteps: (state) => (flowID: number) => {
-    return state.flows[flowID].steps
+    return state
+      .flows[flowID]
+      .steps
+      .map((id: StepID) => state.steps[id])
   }
 }
 

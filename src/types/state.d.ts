@@ -1,12 +1,15 @@
-interface PlanStepInfo<StepType extends string, OptionsT> {
-  id: number
+declare type StepID = number
+declare type StepType = string
+
+declare interface PlanStepInfo<OptionsT = unknown> {
+  id: StepID
   stepType: StepType
   options: OptionsT
 }
 
 declare interface CashFlowInfo {
   name: string,
-  steps: Array<PlanStepInfo<string, unknown>>
+  steps: Array<StepID>
 }
 
 declare interface PlanStepTypeInfo<OptionsT = unknown> {
