@@ -9,6 +9,10 @@
     },
     "income": {
       "name": "Fixed income"
+    },
+    "notes": {
+      "name": "Notes",
+      "defaultText": "Here you can enter any text"
     }
   },
 

@@ -1,5 +1,6 @@
 import { defaultOptions as defaultContributionOptions } from './Contribution'
 import { defaultOptions as defaultIncomeOptions } from './Income'
+import { defaultOptions as defaultNotesOptions } from './Notes'
 
 export { default as Initialize } from './Initialize'
 export { default as Contribution } from './Contribution'
@@ -15,5 +16,9 @@ export const index: PlanStepTypeInfo[] = [
     name: 'income',
     module: 'Income',
     defaultOptions: defaultIncomeOptions
+  },
+  {
+    name: 'notes',
+    defaultOptions: defaultNotesOptions
   }
 ]

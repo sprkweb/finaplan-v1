@@ -11,6 +11,6 @@ declare interface CashFlowInfo {
 
 declare interface PlanStepTypeInfo<OptionsT = unknown> {
   name: string,
-  module: string,
+  module?: string,
   defaultOptions: OptionsT
 }
