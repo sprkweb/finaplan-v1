@@ -8,3 +8,10 @@ interface CashFlowContext {
 
 type PlanStep<OptionsT = unknown> =
   (cashFlow: CashFlow, options: OptionsT, context: CashFlowContext) => CashFlow
+
+declare interface PlanStepTypeInfo<OptionsT = unknown> {
+  readonly name: string,
+  readonly module?: string,
+  readonly component?: string,
+  readonly defaultOptions: OptionsT
+}

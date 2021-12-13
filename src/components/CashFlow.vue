@@ -25,7 +25,10 @@
         </v-expansion-panel-header>
 
         <v-expansion-panel-content>
-          <NotesStep v-if="step.stepType == 'notes'" v-bind="step.options" />
+          <component
+            v-if="stepModules[step.stepType].component"
+            :is="stepModules[step.stepType].component"
+            v-bind="step.options" />
         </v-expansion-panel-content>
       </v-expansion-panel>
     </draggable>
@@ -40,6 +43,7 @@ import draggable from 'vuedraggable'
 import { mdiDrag } from '@mdi/js'
 import NewStepButton from '@/components/NewStepButton.vue'
 import NotesStep from '@/components/step-modules/NotesStep.vue'
+import { index as stepModules } from '@/model/step-modules'
 
 export default Vue.extend({
   components: {
@@ -51,7 +55,8 @@ export default Vue.extend({
     flowID: Number
   },
   data: () => ({
-    icons: { mdiDrag }
+    icons: { mdiDrag },
+    stepModules
   }),
   computed: {
     steps: {
