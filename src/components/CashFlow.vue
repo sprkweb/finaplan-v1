@@ -28,7 +28,7 @@
           <component
             v-if="stepModules[step.stepType].component"
             :is="stepModules[step.stepType].component"
-            v-bind="step.options" />
+            :id="step.id" />
         </v-expansion-panel-content>
       </v-expansion-panel>
     </draggable>

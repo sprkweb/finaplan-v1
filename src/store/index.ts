@@ -8,6 +8,9 @@ const mutations: MutationTree<StateType> = {
   updateStepsOrder (state, { flowID, order }) {
     state.flows[flowID].steps = order
   },
+  updateStep (state, { stepID, options }: { stepID: StepID, options: unknown }) {
+    state.steps[stepID].options = options
+  },
   addStep (state, { flowID, stepTypeInfo }: { flowID: number, stepTypeInfo: PlanStepTypeInfo }) {
     state.lastStepID += 1
     const newStep: PlanStepInfo = {
@@ -29,6 +32,9 @@ const mutations: MutationTree<StateType> = {
 }
 
 const getters: GetterTree<StateType, StateType> = {
+  getStep: (state) => (stepID: StepID) => {
+    return state.steps[stepID]
+  },
   getSteps: (state) => (flowID: number) => {
     return state
       .flows[flowID]

@@ -12,6 +12,7 @@
     },
     "notes": {
       "name": "Notes",
+      "fieldLabel": "Notes",
       "defaultText": "Here you can enter any text"
     }
   },

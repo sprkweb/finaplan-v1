@@ -3,7 +3,7 @@ import {
   isBefore
 } from 'date-fns'
 
-type ContributionOptions = { amount: Cash, contributionDate: RelativeDate }
+export type ContributionOptions = { amount: Cash, contributionDate: RelativeDate }
 
 /**
  * A one-time contribution of a fixed amount to the cash flow

@@ -5,7 +5,7 @@ import {
 
 import divideInterval from '@/model/helpers/divideInterval'
 
-type IncomeOptions = { amount: Cash, incomeStartDate: RelativeDate, period: SimpleDuration }
+export type IncomeOptions = { amount: Cash, incomeStartDate: RelativeDate, period: SimpleDuration }
 
 /**
  * Fixed income; contribution of a certain amount which happens regularly, for example, salary
