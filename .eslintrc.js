@@ -30,7 +30,7 @@ module.exports = {
       files: ['*.vue'],
       rules: {
         // Already handled by TypeScript
-        'no-undef': 'off', // ts(2304)
+        'no-undef': 'off' // ts(2304)
       }
     }
   ]

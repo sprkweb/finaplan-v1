@@ -59,12 +59,10 @@ export default Vue.extend({
         return this.$store.getters.getSteps(this.flowID)
       },
       set (value) {
-        // @ts-ignore: this.$store and this.flowID actually exist
         this.$store.commit('updateSteps', { flowID: this.flowID, value })
       }
     },
     expansionPanelsData: function () {
-      // @ts-ignore: this.$store actually exist
       const stepsCount = this.$store.getters.getSteps(this.flowID).length
       return {
         props: {
