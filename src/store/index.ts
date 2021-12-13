@@ -8,6 +8,14 @@ const mutations: MutationTree<StateType> = {
   updateSteps (state, { flowID, value }) {
     state.flows[flowID].steps = value
   },
+  addStep (state, { flowID, stepTypeInfo }: { flowID: number, stepTypeInfo: PlanStepTypeInfo }) {
+    state.flows[flowID].steps.push({
+      id: state.lastStepID + 1,
+      stepType: stepTypeInfo.name,
+      options: stepTypeInfo.defaultOptions
+    })
+    state.lastStepID += 1
+  },
   addFlow (state) {
     const number = state.flows.length + 1
     const newFlow: CashFlowInfo = {

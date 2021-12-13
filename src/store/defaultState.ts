@@ -41,7 +41,8 @@ const defaultFlows: Array<CashFlowInfo> = [
 ]
 
 export const defaultState = {
-  flows: defaultFlows
+  flows: defaultFlows,
+  lastStepID: 4
 }
 
 export type StateType = typeof defaultState;

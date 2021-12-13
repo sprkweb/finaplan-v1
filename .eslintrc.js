@@ -25,6 +25,13 @@ module.exports = {
       env: {
         jest: true
       }
+    },
+    {
+      files: ['*.vue'],
+      rules: {
+        // Already handled by TypeScript
+        'no-undef': 'off', // ts(2304)
+      }
     }
   ]
 }

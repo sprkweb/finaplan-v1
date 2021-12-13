@@ -28,7 +28,7 @@
           <v-radio
             v-for="(stepModule) in stepModules"
             :key="stepModule.name"
-            :value="stepModule.name"
+            :value="stepModule"
             :label="$t(`stepModules.${stepModule.name}.name`)"
           ></v-radio>
         </v-radio-group>
@@ -45,7 +45,7 @@
           text
           color="primary"
           :disabled="selectedModule === null"
-          @click="dialogShown = false"
+          @click="addStep(); dialogShown = false"
         >
           {{ $t('button.add') }}
         </v-btn>
@@ -63,8 +63,19 @@ export default Vue.extend({
   data: () => ({
     icons: { mdiClose, mdiPlus },
     dialogShown: false,
-    selectedModule: null,
+    selectedModule: null as string | null,
     stepModules
-  })
+  }),
+
+  methods: {
+    addStep: function () {
+      if (this.selectedModule !== null) {
+        const eventParams = {
+          stepTypeInfo: this.selectedModule
+        }
+        this.$emit('add-step', eventParams)
+      }
+    }
+  }
 })
 </script>

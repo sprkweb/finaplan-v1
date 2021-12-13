@@ -13,7 +13,7 @@
         <v-expansion-panel-header>
           <v-row>
             <v-col cols="auto">
-              {{ $t(`stepType.${step.stepType}`) }}
+              {{ $t(`stepModules.${step.stepType}.name`) }}
             </v-col>
             <v-spacer></v-spacer>
             <v-col cols="auto">
@@ -30,7 +30,7 @@
       </v-expansion-panel>
     </draggable>
 
-    <NewStepButton />
+    <NewStepButton @add-step="addStep" />
   </div>
 </template>
 
@@ -72,6 +72,14 @@ export default Vue.extend({
           multiple: true
         }
       }
+    }
+  },
+  methods: {
+    addStep: function ({ stepTypeInfo }: { stepTypeInfo: PlanStepTypeInfo }) {
+      this.$store.commit('addStep', {
+        flowID: this.flowID,
+        stepTypeInfo
+      })
     }
   }
 })
