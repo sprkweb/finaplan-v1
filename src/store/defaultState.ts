@@ -3,15 +3,17 @@ const defaultSteps: Record<StepID, PlanStepInfo> = {
     id: 1,
     stepType: 'contribution',
     options: {
-      amount: 1000,
+      amount: 5000,
       contributionDate: { days: 0 }
     }
   },
   2: {
     id: 2,
-    stepType: 'notes',
+    stepType: 'income',
     options: {
-      text: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+      amount: 1000,
+      period: { months: 1 },
+      incomeStartDate: { months: 1 }
     }
   },
   3: {

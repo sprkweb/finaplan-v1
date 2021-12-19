@@ -18,7 +18,12 @@
       "contributionDatePrefix": "after "
     },
     "income": {
-      "name": "Fixed income"
+      "name": "Fixed income",
+      "amount": "Amount",
+      "period": "Time period",
+      "periodPrefix": "each ",
+      "startDate": "Start date",
+      "startDatePrefix": "starting after "
     },
     "notes": {
       "name": "Notes",

@@ -16,6 +16,7 @@ export const index: Record<string, PlanStepTypeInfo> = {
   income: {
     name: 'income',
     module: 'Income',
+    component: 'IncomeStep',
     defaultOptions: defaultIncomeOptions
   },
   notes: {

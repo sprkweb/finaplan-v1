@@ -18,7 +18,12 @@
       "contributionDatePrefix": "через "
     },
     "income": {
-      "name": "Постоянный доход"
+      "name": "Постоянный доход",
+      "amount": "Сумма",
+      "period": "Период",
+      "periodPrefix": "каждые ",
+      "startDate": "Дата начала",
+      "startDatePrefix": "после "
     },
     "notes": {
       "name": "Заметки",
