@@ -3,9 +3,19 @@
     "cancel": "Отмена",
     "add": "Добавить"
   },
+  "unit": "Единица измерения",
+  "unitsSelection": {
+    "years": "лет",
+    "months": "месяцев",
+    "weeks": "недель",
+    "days": "дней"
+  },
   "stepModules": {
     "contribution": {
-      "name": "Разовый взнос"
+      "name": "Разовый взнос",
+      "amount": "Сумма",
+      "contributionDate": "Дата взноса",
+      "contributionDatePrefix": "через "
     },
     "income": {
       "name": "Постоянный доход"

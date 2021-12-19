@@ -43,12 +43,14 @@ import draggable from 'vuedraggable'
 import { mdiDrag } from '@mdi/js'
 import NewStepButton from '@/components/NewStepButton.vue'
 import NotesStep from '@/components/step-modules/NotesStep.vue'
+import ContributionStep from '@/components/step-modules/ContributionStep.vue'
 import { index as stepModules } from '@/model/step-modules'
 
 export default Vue.extend({
   components: {
     NewStepButton,
     NotesStep,
+    ContributionStep,
     draggable
   },
   props: {

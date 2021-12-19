@@ -10,6 +10,7 @@ export const index: Record<string, PlanStepTypeInfo> = {
   contribution: {
     name: 'contribution',
     module: 'Contribution',
+    component: 'ContributionStep',
     defaultOptions: defaultContributionOptions
   },
   income: {

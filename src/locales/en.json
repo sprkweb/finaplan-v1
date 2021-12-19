@@ -3,9 +3,19 @@
     "cancel": "Cancel",
     "add": "Add"
   },
+  "unit": "Unit",
+  "unitsSelection": {
+    "years": "years",
+    "months": "months",
+    "weeks": "weeks",
+    "days": "days"
+  },
   "stepModules": {
     "contribution": {
-      "name": "One-time contribution"
+      "name": "One-time contribution",
+      "amount": "Amount",
+      "contributionDate": "Contribution date",
+      "contributionDatePrefix": "after "
     },
     "income": {
       "name": "Fixed income"

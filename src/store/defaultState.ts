@@ -1,9 +1,10 @@
 const defaultSteps: Record<StepID, PlanStepInfo> = {
   1: {
     id: 1,
-    stepType: 'notes',
+    stepType: 'contribution',
     options: {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+      amount: 1000,
+      contributionDate: { days: 0 }
     }
   },
   2: {
