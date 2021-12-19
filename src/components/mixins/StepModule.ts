@@ -9,8 +9,8 @@ export default Vue.extend({
   }
 })
 
-export function generateComputedOption<ValueT> (option: string):
-  { get: () => ValueT, set: (value: ValueT) => void } {
+type computedOption<ValueT> = { get: () => ValueT, set: (value: ValueT) => void }
+export function generateComputedOption<ValueT> (option: string): computedOption<ValueT> {
   return {
     get () {
       // @ts-ignore
@@ -29,4 +29,12 @@ export function generateComputedOption<ValueT> (option: string):
       })
     }
   }
+}
+
+type computedOptions = Record<string, computedOption<unknown>>
+export function generateComputedOptions (options: string[]): computedOptions {
+  return options.reduce((result, option) => {
+    result[option] = generateComputedOption(option)
+    return result
+  }, {} as computedOptions)
 }

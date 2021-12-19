@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import StepModule, { generateComputedOption } from '@/components/mixins/StepModule'
+import StepModule, { generateComputedOptions } from '@/components/mixins/StepModule'
 import SimpleDuration from '@/components/form-inputs/SimpleDuration.vue'
 
 export default StepModule.extend({
@@ -23,8 +23,7 @@ export default StepModule.extend({
     SimpleDuration
   },
   computed: {
-    amount: generateComputedOption('amount'),
-    contributionDate: generateComputedOption('contributionDate')
+    ...generateComputedOptions(['amount', 'contributionDate'])
   }
 })
 </script>
