@@ -15,56 +15,16 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import StepModule, { generateComputedOption } from '@/components/mixins/StepModule'
 import SimpleDuration from '@/components/form-inputs/SimpleDuration.vue'
 
-export default Vue.extend({
+export default StepModule.extend({
   components: {
     SimpleDuration
   },
-  props: [
-    'id'
-  ],
   computed: {
-    step: function () {
-      return this.$store.getters.getStep(this.id)
-    },
-    amount: {
-      get () {
-        // @ts-ignore
-        return this.step.options.amount
-      },
-      set (value: number) {
-        // @ts-ignore
-        this.$store.commit('updateStep', {
-          // @ts-ignore
-          stepID: this.step.id,
-          options: {
-            // @ts-ignore
-            ...this.step.options,
-            amount: value
-          }
-        })
-      }
-    },
-    contributionDate: {
-      get () {
-        // @ts-ignore
-        return this.step.options.contributionDate
-      },
-      set (value: SimpleDuration) {
-        // @ts-ignore
-        this.$store.commit('updateStep', {
-          // @ts-ignore
-          stepID: this.step.id,
-          options: {
-            // @ts-ignore
-            ...this.step.options,
-            contributionDate: value
-          }
-        })
-      }
-    }
+    amount: generateComputedOption('amount'),
+    contributionDate: generateComputedOption('contributionDate')
   }
 })
 </script>

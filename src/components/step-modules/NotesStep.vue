@@ -8,34 +8,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import type { NotesOptions } from '@/model/step-modules/Notes'
+import StepModule, { generateComputedOption } from '@/components/mixins/StepModule'
 
-export default Vue.extend({
-  props: [
-    'id'
-  ],
+export default StepModule.extend({
   computed: {
-    step: function () {
-      return this.$store.getters.getStep(this.id)
-    },
-    text: {
-      get () {
-        // @ts-ignore
-        return this.step.options.text
-      },
-      set (value: string) {
-        const newOptions: NotesOptions = {
-          text: value
-        }
-        // @ts-ignore
-        this.$store.commit('updateStep', {
-          // @ts-ignore
-          stepID: this.step.id,
-          options: newOptions
-        })
-      }
-    }
+    text: generateComputedOption('text')
   }
 })
 </script>
