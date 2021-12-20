@@ -9,13 +9,13 @@ export { default as Income } from './Income'
 export const index: Record<string, PlanStepTypeInfo> = {
   contribution: {
     name: 'contribution',
-    module: 'Contribution',
+    model: 'Contribution',
     component: 'ContributionStep',
     defaultOptions: defaultContributionOptions
   },
   income: {
     name: 'income',
-    module: 'Income',
+    model: 'Income',
     component: 'IncomeStep',
     defaultOptions: defaultIncomeOptions
   },

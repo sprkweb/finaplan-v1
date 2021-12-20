@@ -11,7 +11,7 @@ type PlanStep<OptionsT = unknown> =
 
 declare interface PlanStepTypeInfo<OptionsT = unknown> {
   readonly name: string,
-  readonly module?: string,
+  readonly model?: string,
   readonly component?: string,
   readonly defaultOptions: OptionsT
 }
