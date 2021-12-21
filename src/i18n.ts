@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueI18n, { LocaleMessages } from 'vue-i18n'
+import dateTimeFormats from '@/locales/dateTime'
 
 Vue.use(VueI18n)
 
@@ -19,5 +20,6 @@ function loadLocaleMessages (): LocaleMessages {
 export default new VueI18n({
   locale: window.navigator.language || window.navigator.languages[0],
   fallbackLocale: 'en',
-  messages: loadLocaleMessages()
+  messages: loadLocaleMessages(),
+  dateTimeFormats
 })
