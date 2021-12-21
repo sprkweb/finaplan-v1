@@ -1,6 +1,10 @@
 <template>
   <div>
-    <!-- TODO: transition? -->
+    <ContextControls
+      :flowID="flowID"
+      class="context-block"
+      />
+
     <draggable
       tag="v-expansion-panels"
       v-model='steps'
@@ -42,6 +46,7 @@ import Vue from 'vue'
 import draggable from 'vuedraggable'
 import { mdiDrag } from '@mdi/js'
 import NewStepButton from '@/components/NewStepButton.vue'
+import ContextControls from '@/components/CashFlow/ContextControls.vue'
 import NotesStep from '@/components/step-modules/NotesStep.vue'
 import ContributionStep from '@/components/step-modules/ContributionStep.vue'
 import IncomeStep from '@/components/step-modules/IncomeStep.vue'
@@ -50,6 +55,7 @@ import { index as stepModules } from '@/model/step-modules'
 export default Vue.extend({
   components: {
     NewStepButton,
+    ContextControls,
     NotesStep,
     ContributionStep,
     IncomeStep,
@@ -95,3 +101,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.context-block {
+  margin-bottom: 16px;
+}
+</style>

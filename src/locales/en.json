@@ -1,4 +1,8 @@
 {
+  "flow": {
+    "initialName": "Flow {number}",
+    "startDate": "Start date of the cash flow:"
+  },
   "button": {
     "cancel": "Cancel",
     "add": "Add"

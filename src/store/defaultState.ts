@@ -35,11 +35,17 @@ const defaultSteps: Record<StepID, PlanStepInfo> = {
 const defaultFlows: Array<CashFlowInfo> = [
   {
     name: 'Flow 1',
-    steps: [1, 2, 3]
+    steps: [1, 2, 3],
+    context: {
+      startDate: new Date(2000, 1, 1)
+    }
   },
   {
     name: 'Flow 2',
-    steps: [4]
+    steps: [4],
+    context: {
+      startDate: new Date(2000, 1, 1)
+    }
   }
 ]
 

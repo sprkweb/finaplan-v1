@@ -1,3 +1,6 @@
+import i18n from '@/i18n'
+import calcFlow from '@/model/helpers/calcFlow'
+import { startOfDay } from 'date-fns'
 import Vue from 'vue'
 import Vuex, { GetterTree, MutationTree } from 'vuex'
 import { defaultState, StateType } from './defaultState'
@@ -24,22 +27,44 @@ const mutations: MutationTree<StateType> = {
   addFlow (state) {
     const number = state.flows.length + 1
     const newFlow: CashFlowInfo = {
-      name: `Flow ${number}`,
-      steps: []
+      name: i18n.t('flow.initialName', { number }) as string,
+      steps: [],
+      context: {
+        startDate: startOfDay(new Date())
+      }
     }
     Vue.set(state.flows, number - 1, newFlow)
+  },
+  updateFlowContext (state, { flowID, newValue }) {
+    state.flows[flowID].context = newValue
   }
+}
+
+const getFlow = (state: StateType) => (flowID: number) => {
+  return state.flows[flowID]
+}
+
+const getSteps = (state: StateType) => (flowID: number) => {
+  return getFlow(state)(flowID)
+    .steps
+    .map((id: StepID) => state.steps[id])
+}
+
+const getContext = (state: StateType) => (flowID: number) => {
+  return getFlow(state)(flowID)
+    .context
 }
 
 const getters: GetterTree<StateType, StateType> = {
   getStep: (state) => (stepID: StepID) => {
     return state.steps[stepID]
   },
-  getSteps: (state) => (flowID: number) => {
-    return state
-      .flows[flowID]
-      .steps
-      .map((id: StepID) => state.steps[id])
+  getSteps,
+  getContext,
+  calcFlow: (state) => (flowID: number, untilStep?: StepID) => {
+    const steps = getSteps(state)(flowID)
+    const context = state.flows[flowID].context
+    return calcFlow(steps, context, untilStep)
   }
 }
 

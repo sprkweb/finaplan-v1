@@ -9,5 +9,6 @@ declare interface PlanStepInfo<OptionsT = unknown> {
 
 declare interface CashFlowInfo {
   name: string,
-  steps: Array<StepID>
+  steps: Array<StepID>,
+  context: CashFlowContext
 }

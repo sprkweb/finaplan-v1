@@ -1,4 +1,8 @@
 {
+  "flow": {
+    "initialName": "Поток {number}",
+    "startDate": "Дата начала денежного потока:"
+  },
   "button": {
     "cancel": "Отмена",
     "add": "Добавить"
