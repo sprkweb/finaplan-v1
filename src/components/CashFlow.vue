@@ -7,6 +7,7 @@
 
     <draggable
       tag="v-expansion-panels"
+      handle=".handle"
       v-model='steps'
       v-bind:component-data="expansionPanelsData"
     >
@@ -21,7 +22,7 @@
             </v-col>
             <v-spacer></v-spacer>
             <v-col cols="auto">
-              <v-icon>
+              <v-icon class="handle">
                 {{ icons.mdiDrag }}
               </v-icon>
             </v-col>

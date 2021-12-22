@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row>
-      <v-col>
+      <v-col cols="12" sm="6">
         <DatePicker
           :label="$t('stepModules.chart.startDate')"
           v-model="startDate"
@@ -11,7 +11,7 @@
           :reset-icon="icons.mdiRewind"
           />
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6">
         <DatePicker
           :label="$t('stepModules.chart.endDate')"
           v-model="endDate"
@@ -23,6 +23,7 @@
     <Chart
       :chartData="chartData"
       :options="options"
+      css-classes="chart-frame"
       />
   </div>
 </template>
@@ -130,3 +131,9 @@ export default StepModule.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.chart-frame {
+  min-height: 400px;
+}
+</style>

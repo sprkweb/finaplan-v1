@@ -34,7 +34,10 @@
     </v-app-bar>
 
     <v-main>
-      <v-tabs-items v-model="currentFlow">
+      <v-tabs-items
+        v-model="currentFlow"
+        class="primary tab-content-background"
+      >
         <v-tab-item
           v-for="flow, key in flows"
           :key="key"
@@ -80,3 +83,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.tab-content-background {
+  min-height: 100%;
+}
+</style>
