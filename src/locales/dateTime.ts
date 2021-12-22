@@ -6,6 +6,10 @@ const dateTimeFormats: VueI18n.DateTimeFormats = {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
+    },
+    month: {
+      year: 'numeric',
+      month: 'long'
     }
   },
   en: {
@@ -13,6 +17,10 @@ const dateTimeFormats: VueI18n.DateTimeFormats = {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
+    },
+    month: {
+      year: 'numeric',
+      month: 'long'
     }
   }
 }

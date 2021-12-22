@@ -10,6 +10,8 @@
         :label="label"
         :prepend-inner-icon="icon"
         readonly
+        :append-icon="resettable ? resetIcon : undefined"
+        @click:append=setDefault
         v-bind="attrs"
         v-on="on"
       ></v-text-field>
@@ -32,7 +34,10 @@ export default Vue.extend({
   props: [
     'value',
     'label',
-    'icon'
+    'icon',
+    'resettable',
+    'resetIcon',
+    'defaultDate'
   ],
   data: () => ({
     selectionOpened: false
@@ -47,10 +52,23 @@ export default Vue.extend({
     locale: () => i18n.locale
   },
   methods: {
-    onInput: function (event: string) {
+    setValue (value: unknown) {
+      this.$emit('input', value)
+    },
+    setDefault: function () {
+      if (this.defaultDate) {
+        // @ts-ignore
+        this.setValue(this.defaultDate)
+      } else {
+        // @ts-ignore
+        this.setValue(null)
+      }
+    },
+    onInput (event: string) {
       // @ts-ignore
       this.selectionOpened = false
-      this.$emit('input', parseISO(event))
+      // @ts-ignore
+      this.setValue(parseISO(event))
     }
   }
 })

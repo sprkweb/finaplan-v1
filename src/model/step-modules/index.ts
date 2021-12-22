@@ -1,6 +1,7 @@
 import { defaultOptions as defaultContributionOptions } from './Contribution'
 import { defaultOptions as defaultIncomeOptions } from './Income'
 import { defaultOptions as defaultNotesOptions } from './Notes'
+import { defaultOptions as defaultChartOptions } from './Chart'
 
 export { default as Initialize } from './Initialize'
 export { default as Contribution } from './Contribution'
@@ -23,5 +24,10 @@ export const index: Record<string, PlanStepTypeInfo> = {
     name: 'notes',
     component: 'NotesStep',
     defaultOptions: defaultNotesOptions
+  },
+  chart: {
+    name: 'chart',
+    component: 'ChartStep',
+    defaultOptions: defaultChartOptions
   }
 }

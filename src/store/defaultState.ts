@@ -3,7 +3,7 @@ const defaultSteps: Record<StepID, PlanStepInfo> = {
     id: 1,
     stepType: 'contribution',
     options: {
-      amount: 5000,
+      amount: 25000,
       contributionDate: { days: 0 }
     }
   },
@@ -18,9 +18,10 @@ const defaultSteps: Record<StepID, PlanStepInfo> = {
   },
   3: {
     id: 3,
-    stepType: 'notes',
+    stepType: 'chart',
     options: {
-      text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+      startDate: new Date(2000, 1, 1),
+      endDate: new Date(2006, 1, 1)
     }
   },
   4: {

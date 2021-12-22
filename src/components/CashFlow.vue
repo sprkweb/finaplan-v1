@@ -32,7 +32,8 @@
           <component
             v-if="stepModules[step.stepType].component"
             :is="stepModules[step.stepType].component"
-            :id="step.id" />
+            :id="step.id"
+            :flowID="flowID" />
         </v-expansion-panel-content>
       </v-expansion-panel>
     </draggable>
@@ -50,6 +51,7 @@ import ContextControls from '@/components/CashFlow/ContextControls.vue'
 import NotesStep from '@/components/step-modules/NotesStep.vue'
 import ContributionStep from '@/components/step-modules/ContributionStep.vue'
 import IncomeStep from '@/components/step-modules/IncomeStep.vue'
+import ChartStep from '@/components/step-modules/ChartStep.vue'
 import { index as stepModules } from '@/model/step-modules'
 
 export default Vue.extend({
@@ -59,6 +61,7 @@ export default Vue.extend({
     NotesStep,
     ContributionStep,
     IncomeStep,
+    ChartStep,
     draggable
   },
   props: {
@@ -75,7 +78,9 @@ export default Vue.extend({
       },
       // Use this only to change their order
       set (value: PlanStepInfo[]) {
+        // @ts-ignore
         this.$store.commit('updateStepsOrder', {
+          // @ts-ignore
           flowID: this.flowID,
           order: value.map((v: PlanStepInfo) => v.id)
         })

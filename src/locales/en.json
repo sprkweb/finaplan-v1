@@ -33,6 +33,11 @@
       "name": "Notes",
       "fieldLabel": "Notes",
       "defaultText": "Here you can enter any text"
+    },
+    "chart": {
+      "name": "Chart",
+      "startDate": "Start date",
+      "endDate": "End date"
     }
   },
 
