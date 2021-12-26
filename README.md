@@ -4,7 +4,13 @@
 
 <h1 align="center">FinaPlan</h1>
 
-Financial planning using modules
+Financial planning using modules.
+
+Inspired by [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy):
+
+- Each module does exactly one thing and does it well;
+- Modules are composed together and work together in a way that is defined by user;
+- Modules handle simple streams of numbers ("cash flow")
 
 ## Project setup
 ```
