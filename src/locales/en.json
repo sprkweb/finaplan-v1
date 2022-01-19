@@ -29,6 +29,14 @@
       "startDate": "Start date",
       "startDatePrefix": "starting after "
     },
+    "investment": {
+      "name": "Investments",
+      "interestRate": "Expected interest rate per period",
+      "period": "Period",
+      "periodPrefix": "each ",
+      "startDate": "Start date",
+      "startDatePrefix": "starting after "
+    },
     "notes": {
       "name": "Notes",
       "fieldLabel": "Notes",

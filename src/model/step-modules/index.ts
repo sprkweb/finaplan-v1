@@ -1,11 +1,13 @@
 import { defaultOptions as defaultContributionOptions } from './Contribution'
 import { defaultOptions as defaultIncomeOptions } from './Income'
+import { defaultOptions as defaultInvestmentOptions } from './Investment'
 import { defaultOptions as defaultNotesOptions } from './Notes'
 import { defaultOptions as defaultChartOptions } from './Chart'
 
 export { default as Initialize } from './Initialize'
 export { default as Contribution } from './Contribution'
 export { default as Income } from './Income'
+export { default as Investment } from './Investment'
 
 export const index: Record<string, PlanStepTypeInfo> = {
   contribution: {
@@ -19,6 +21,12 @@ export const index: Record<string, PlanStepTypeInfo> = {
     model: 'Income',
     component: 'IncomeStep',
     defaultOptions: defaultIncomeOptions
+  },
+  investment: {
+    name: 'investment',
+    // model: 'Investment',
+    component: 'InvestmentStep',
+    defaultOptions: defaultInvestmentOptions
   },
   notes: {
     name: 'notes',

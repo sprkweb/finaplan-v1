@@ -9,6 +9,8 @@ declare type SimpleDuration =
  */
  type Cash = number;
 
+ type Percent = number;
+
  /**
   * Here I create an alias to underscore that Duration
   * can also mean a date

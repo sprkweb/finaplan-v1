@@ -29,6 +29,14 @@
       "startDate": "Дата начала",
       "startDatePrefix": "после "
     },
+    "investment": {
+      "name": "Инвестиции",
+      "interestRate": "Ожидаемый процентный доход за период",
+      "period": "Период",
+      "periodPrefix": "каждые ",
+      "startDate": "Дата начала",
+      "startDatePrefix": "после "
+    },
     "notes": {
       "name": "Заметки",
       "fieldLabel": "Заметки",

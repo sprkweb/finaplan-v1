@@ -52,6 +52,7 @@ import ContextControls from '@/components/CashFlow/ContextControls.vue'
 import NotesStep from '@/components/step-modules/NotesStep.vue'
 import ContributionStep from '@/components/step-modules/ContributionStep.vue'
 import IncomeStep from '@/components/step-modules/IncomeStep.vue'
+import InvestmentStep from '@/components/step-modules/InvestmentStep.vue'
 import ChartStep from '@/components/step-modules/ChartStep.vue'
 import { index as stepModules } from '@/model/step-modules'
 
@@ -62,6 +63,7 @@ export default Vue.extend({
     NotesStep,
     ContributionStep,
     IncomeStep,
+    InvestmentStep,
     ChartStep,
     draggable
   },
