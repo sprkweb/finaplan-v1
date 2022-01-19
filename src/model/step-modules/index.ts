@@ -24,7 +24,7 @@ export const index: Record<string, PlanStepTypeInfo> = {
   },
   investment: {
     name: 'investment',
-    // model: 'Investment',
+    model: 'Investment',
     component: 'InvestmentStep',
     defaultOptions: defaultInvestmentOptions
   },
